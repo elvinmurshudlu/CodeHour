@@ -455,6 +455,7 @@ main .footer {
   display: flex;
   justify-content: space-around;
   padding: 150px 0;
+  row-gap: 30px;
 }
 @media (max-width: 991px) {
   main .footer {
@@ -479,6 +480,9 @@ main .footer--menu ul li a {
 }
 main .footer--social ul {
   line-height: 60px;
+}
+main .footer--social ul li:first-child {
+  font-size: 30px;
 }
 main .footer--social ul li {
   font-size: 22px;

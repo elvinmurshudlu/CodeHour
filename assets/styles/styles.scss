@@ -468,6 +468,7 @@ main{
         display: flex;
         justify-content: space-around;
         padding: 150px 0;
+        row-gap: 30px;
 
         @include tablet{
             flex-direction: column;
@@ -492,8 +493,12 @@ main{
         &--social{
             ul{
                 line-height: 60px;
+                li:first-child{
+                    font-size: 30px;
+                }
                 li{
                     font-size: 22px;
+
                     a{
                         color: black;
                         text-decoration: underline;
