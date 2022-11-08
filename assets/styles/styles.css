@@ -267,7 +267,7 @@ main .collections--card--images {
 }
 @media (max-width: 991px) {
   main .collections--card--images_first {
-    order: 0;
+    order: -1;
   }
 }
 main .collections--card--images img {

@@ -274,7 +274,7 @@ main{
                 
                 &_first{
                     @include tablet{
-                        order: 0;
+                        order: -1;
                     }
                 }
 
