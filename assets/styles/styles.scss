@@ -1,0 +1,509 @@
+@import "variables";
+@import "mixin";
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+html , body{
+    width: 100%;
+}
+
+
+
+.nav{
+        width: 100%;
+        height: 90px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        background-color: white;
+
+        @include tablet{
+            width: 100%;
+        }
+
+        .logo{
+            margin-left: 90px;
+            cursor: pointer;
+            @include tablet{
+                margin-left: 10px;;
+            }
+
+
+            h1{
+                font-weight: 200;
+            }
+        }
+        .menu{
+            margin-right: 90px;
+            @include tablet{
+                display: none;
+            }
+            ul{
+                display: flex;
+                column-gap: 45px;
+                li{
+                    font-size: 18px;
+                    a{
+                        color: black;
+                    }
+                }
+            }
+            }
+
+        i{
+            font-size: 25px;
+            display: none;
+            @include tablet{
+                display: flex;
+                margin-right: 10px;
+            }
+        }
+        label{
+            display: none;
+            @include tablet{
+                display: flex;
+
+            }
+        }
+        .res_menu{
+            position: absolute;
+            top: 90px;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background-color: white;
+            display: flex;
+            justify-content: end;
+            padding: 0 15px;
+            overflow: hidden;
+            transition: 1s;
+            ul{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                row-gap: 20px;
+                margin-top: 18px;
+                li{
+                    font-size: 30px;
+                    a{
+                        color: black;
+                    }
+                }
+            }
+        }
+        input{
+            display: none;
+        }
+        input:checked ~ .res_menu{
+            height: 200px;
+
+        }
+            
+}
+   
+.sales{
+    width: 100%;
+    background-color: black;
+    height: 60px;
+    display: flex;
+    column-gap: 15px;
+    justify-content: center;
+    align-items: center;
+    h1{
+        color: white;
+        font-size: 20px;
+        font-weight: 200;
+        @include mobile{
+            font-size: 17px;
+        }
+    }
+    a{
+        color: white;
+        font-weight: 600;
+        font-size: 20px;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+main{
+    width: 100%;
+    height: 95vh;
+    
+    
+
+    .header{
+        height: 100%;
+        background-color: #431314;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        column-gap: 70px;
+        flex-wrap: wrap;
+        @include mobile{
+            row-gap: 50px;
+            
+            justify-content: start;
+            
+        }
+        @include tablet{
+            row-gap: 50px;
+            
+            justify-content: center;
+            
+        }
+
+        
+
+        &--image{
+            height: 97%;
+            @include tablet{
+                order: 1;
+                
+            }
+            img{
+                height: 100%;
+                @include tablet{
+                    height: 54.5%;
+                    
+                    
+                }
+            }
+        }
+        &--text{
+            display: flex;
+            flex-direction: column;
+            row-gap: 30px;
+            justify-content: center;
+            @include tablet{
+                
+                padding: 60px 10px;
+                row-gap: 20px;
+                
+                
+            }
+
+            h1{
+                font-size: 50px;
+                color: white;
+                @include tablet{
+                    font-size: 40px;
+                    
+                } 
+            }
+            h4{
+                color: white;
+                font-size: 20px;
+                font-weight: 100    ;
+            }
+            input{
+                background-color: white;
+                width: 150px;
+                font-size: 18px;
+                padding: 15px 0;
+            }
+        }
+        
+    }
+
+    .collections{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 50px;
+        
+        padding: 90px 0;
+        position: relative;
+        background-color: white;
+        
+        @include tablet{
+            flex-direction: column;
+        }
+
+        &--card{
+            display: flex;
+            row-gap: 10px;
+
+            @include tablet{
+                flex-direction: column;
+
+            }
+            &--text{
+                display: flex;
+                flex-direction: column;
+                row-gap: 30px;
+                justify-content: center;
+                
+                input{
+                    background-color: black;
+                    color: white;
+                    width: 130px;
+                    padding: 18px 0;
+                    font-size: 17px;
+                }
+                h1{
+                    font-size: 40px;
+                    font-weight: 300;
+                    width: 100%;
+                }
+                h4{
+                    font-size: 20px;
+                    font-weight: 100;
+                    width: 100%;
+                }
+            }
+            &--images{
+                display: flex;
+                
+                
+                @include tablet{
+                    flex-direction: column;
+                    align-items: center;
+                    row-gap: 20px;
+                    
+                }
+                
+                &_first{
+                    @include tablet{
+                        order: 0;
+                    }
+                }
+
+                img{
+                    width: 290px;
+                    @include tablet{
+                        width: 360px;
+                    }
+                }
+            }
+        }
+    }
+    .background{
+        width: 100%;
+        height: 450px;
+        &--image{
+            position: fixed;
+            top: 100px;
+            width: 100%;
+            height: 1000vh;
+            z-index: -1;
+        }
+        &--text{
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            h1{
+                color: white;
+                font-size: 55px;
+                font-weight: 200;
+                @include mobile{
+                    font-size: 40px;
+                }
+            }
+        }
+        
+        
+        
+    }
+    .accessories{
+        background-color: white;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        row-gap: 40px;
+        column-gap: 30px;
+        flex-wrap: wrap;
+        padding: 150px 0;
+        @include tablet{
+            padding: 70px 0;
+            row-gap: 40px;
+            
+        }
+        
+        &--card{
+            @include mobile{
+                margin-left: 10px;
+            }
+            width: 650px;
+            &_image{
+                width: 100%;
+                img{
+                    width: 100%;
+                    @include mobile{
+                        width: 98%;
+                    }
+                }
+
+            }
+            &_text{
+                display: flex;
+                flex-direction: column;
+                row-gap: 20px;
+                color: black;
+                h1{
+                    font-size: 35px;
+                    font-weight: 200;
+                }
+                h4{
+                    font-weight: 100;
+                    font-size: 18px;
+                }
+
+                input{
+                    width: 150px;
+                    background-color: black;
+                    color: white;
+                    padding: 20px 0;
+                    font-size: 16px;
+                }
+            }
+        }
+
+    }
+    .contact{
+        width: 100%;
+        height: 600px;
+        position: relative;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        @include tablet{
+            height: 400px;
+
+        }
+        
+
+        &--image{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &--text{
+            width: 100%;
+            padding-left: 150px;
+            @include tablet{
+                padding-left: 110px;
+
+            }
+
+            @include mobile{
+                padding-left: 10px;
+    
+            }
+
+            h3{
+                font-size: 40px;
+                font-weight: 100;
+                @include mobile{
+                    font-size: 30px;
+    
+                }
+                
+
+
+            }
+            h1{
+                font-size: 70px;
+                width: 50%;
+
+                @include mobile{
+                    font-size: 35px;
+                    width: 100%;
+                }
+
+                @include tablet{
+                    width: 80%;
+                    font-size: 40px;
+                }
+            }
+    
+    
+            &--mail{
+                width: 400px;
+                padding: 10px 10px;
+                font-size: 16px;
+
+                @include tablet{
+                   width: 350px;
+    
+                }
+            }
+            &--join{
+                width: 100px;
+                background-color: black;
+                color: white;
+                padding: 16px 0;
+                font-size: 18px;
+                @include tablet{
+                    width: 100px;
+    
+                }
+            }
+        }
+
+    }
+    .footer{
+        width: 100%;
+        background-color: white;
+        display: flex;
+        justify-content: space-around;
+        padding: 150px 0;
+
+        @include tablet{
+            flex-direction: column;
+            padding: 100px 120px;
+        }
+        @include mobile{
+            padding: 80px 20px;
+        }
+
+        &--menu{
+            ul{
+                line-height: 60px;
+                li{
+                    font-size: 22px;
+                    a{
+                        color: black;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        &--social{
+            ul{
+                line-height: 60px;
+                li{
+                    font-size: 22px;
+                    a{
+                        color: black;
+                        text-decoration: underline;
+                        i{
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}   
